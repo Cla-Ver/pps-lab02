@@ -27,8 +27,8 @@ object Lab2 extends App:
 
   val isStringFull: (String => Boolean) = neg(isStringEmpty)
 
-  val p1: Int => Int => Int => Boolean = (x: Int) => (y: Int) => (z: Int) => x <= y & y == z
-  val p2: (Int, Int, Int) => Boolean = (x: Int, y: Int, z: Int) => x <= y & y == z
+  val p1: Int => Int => Int => Boolean = x => y => z => x <= y & y == z
+  val p2: (Int, Int, Int) => Boolean = (x, y, z) => x <= y & y == z
   def p3(x: Int)(y: Int)(z: Int): Boolean = x <= y & y == z
   def p4(x: Int, y: Int, z:Int): Boolean = x <= y & y == z
 
