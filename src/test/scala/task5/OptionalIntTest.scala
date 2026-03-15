@@ -6,7 +6,7 @@ import Optionals.*
 
 class OptionalIntTest:
   val inc: Int => Int = value => value + 1
-
+  val f: Int => Boolean = _ > 0
   @Test def emptyOptionalShouldBeEmpty(): Unit =
     val empty = OptionalInt.Empty()
     assertTrue(OptionalInt.isEmpty(empty))
@@ -33,10 +33,11 @@ class OptionalIntTest:
 
   @Test def filterShouldKeepValues(): Unit =
     val opt: OptionalInt = OptionalInt.Just(1)
-    val f: Int => Boolean = _ > 0
     assertEquals(OptionalInt.Just(1), OptionalInt.filter(opt)(f))
     
   @Test def filterShouldDiscardFilteredValues(): Unit =
     val opt: OptionalInt = OptionalInt.Just(0)
-    val f: Int => Boolean = _ > 0
     assertEquals(OptionalInt.Empty(), OptionalInt.filter(opt)(f))
+
+  @Test def filterShouldWorkOnEmpty(): Unit =
+    assertEquals(OptionalInt.Empty(), OptionalInt.filter(OptionalInt.Empty())(f))
