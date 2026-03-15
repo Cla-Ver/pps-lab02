@@ -6,6 +6,7 @@ import Optionals.*
 
 class OptionalIntTest:
   val inc: Int => Int = value => value + 1
+
   @Test def emptyOptionalShouldBeEmpty(): Unit =
     val empty = OptionalInt.Empty()
     assertTrue(OptionalInt.isEmpty(empty))

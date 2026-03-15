@@ -20,8 +20,8 @@ object Optionals:
       case _       => orElse
 
     def mapInt(opt: OptionalInt)(f: Int => Int): OptionalInt = opt match
-      case Empty() => Empty()
       case Just(e) => Just(f(e))
+      case _ => Empty()
 
     def filter(opt: OptionalInt)(f: Int => Boolean): OptionalInt = opt match
       case Just(e) if f(e) => Just(e)

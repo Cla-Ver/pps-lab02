@@ -1,9 +1,9 @@
 package task4
 
+import it.unibo.pps.u02.Lab2.Expr
+import it.unibo.pps.u02.Lab2.Expr.*
 import org.junit.Test
 import org.junit.Assert.*
-import task4.Expr.*
-
 class ExprTest:
   val testNumber: Int = 3
   @Test def shouldEvaluateLiteral(): Unit =
